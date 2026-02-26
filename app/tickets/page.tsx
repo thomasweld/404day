@@ -28,7 +28,7 @@ export default function TicketsPage() {
             {/* Event header with image */}
             <div className="relative h-48 bg-gradient-to-br from-[#e87851] to-[#fac355]">
               <Image
-                src={`${basePath}/404day-fest-peaches-hero.png?v=2`}
+                src={`${basePath}/404day-fest-peaches-hero.png?v=3`}
                 alt="404 Day 2026"
                 fill
                 className="object-cover opacity-80"

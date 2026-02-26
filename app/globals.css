@@ -134,10 +134,10 @@ body {
   background-position: center;
 }
 html[data-base-path=""] .hero-peaches {
-  background-image: url("/404day-fest-peaches-hero.png");
+  background-image: url("/404day-fest-peaches-hero.png?v=3");
 }
 html[data-base-path="/404day"] .hero-peaches {
-  background-image: url("/404day/404day-fest-peaches-hero.png");
+  background-image: url("/404day/404day-fest-peaches-hero.png?v=3");
 }
 
 /* Dark overlay so white logo + text read clearly */
