@@ -130,9 +130,14 @@ body {
 
 /* Hero with peaches image + transparent gradient overlays */
 .hero-peaches {
-  background-image: url("/404day-fest-peaches-hero.png?v=2");
   background-size: cover;
   background-position: center;
+}
+html[data-base-path=""] .hero-peaches {
+  background-image: url("/404day-fest-peaches-hero.png");
+}
+html[data-base-path="/404day"] .hero-peaches {
+  background-image: url("/404day/404day-fest-peaches-hero.png");
 }
 
 /* Dark overlay so white logo + text read clearly */

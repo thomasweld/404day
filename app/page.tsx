@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { basePath } from "./lib/constants";
 
 const upcomingEvents = [
   {
@@ -45,7 +46,7 @@ export default function HomePage() {
           {/* Large white logo */}
           <div className="flex justify-center mb-8">
             <Image
-              src="/404day-logo-white.png"
+              src={`${basePath}/404day-logo-white.png`}
               alt="404 Day"
               width={220}
               height={220}
@@ -200,7 +201,7 @@ export default function HomePage() {
         >
           <div className="relative z-10">
             <div className="flex justify-center mb-6">
-              <Image src="/404day-logo-black.png" alt="404day" width={80} height={80} className="object-contain" />
+              <Image src={`${basePath}/404day-logo-black.png`} alt="404day" width={80} height={80} className="object-contain" />
             </div>
             <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">RSVP FREE to 404 Day 2026</h2>
             <p className="text-white/80 text-lg max-w-xl mx-auto mb-8">

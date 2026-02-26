@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { basePath } from "../lib/constants";
 
 export default function Footer() {
   return (
@@ -9,7 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-4">
-              <Image src="/404day-logo-black.png" alt="404day Festival" width={48} height={48} className="object-contain" />
+              <Image src={`${basePath}/404day-logo-black.png`} alt="404day Festival" width={48} height={48} className="object-contain" />
               <span className="text-2xl font-black text-[#2d2d2d]">
                 <span className="gradient-text">404</span>day
               </span>

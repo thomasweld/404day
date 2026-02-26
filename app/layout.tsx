@@ -2,22 +2,23 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
+import { basePath } from "./lib/constants";
 export const metadata: Metadata = {
+  metadataBase: new URL("https://thomasweld.github.io/404day"),
   title: "404 Day — Celebrating Atlanta Culture",
   description:
     "404 Day is an annual celebration of Atlanta culture. Music, food, and community spirit in Piedmont Park — free to attend every April 4th.",
   keywords: ["404day", "404 day", "festival", "Atlanta", "Piedmont Park", "music", "Georgia", "Atlanta culture"],
   icons: {
-    icon: "/404day-logo-black.png",
-    apple: "/404day-logo-white.png",
+    icon: "404day-logo-black.png",
+    apple: "404day-logo-white.png",
   },
   openGraph: {
     title: "404 Day — Celebrating Atlanta Culture",
     description: "Music, food, and community in Piedmont Park. Free to attend every April 4th.",
     type: "website",
-    url: "https://404day.com",
-    images: [{ url: "/404day-logo-white.png", width: 400, height: 400, alt: "404day Festival Logo" }],
+    url: "https://thomasweld.github.io/404day/",
+    images: [{ url: "404day-logo-white.png", width: 400, height: 400, alt: "404day Festival Logo" }],
   },
 };
 
@@ -27,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-base-path={basePath}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

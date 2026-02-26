@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { basePath } from "../lib/constants";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -26,7 +27,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group" aria-label="404day Festival — Home">
             <Image
-              src="/404day-logo-black.png"
+              src={`${basePath}/404day-logo-black.png`}
               alt="404day Festival"
               width={40}
               height={40}
