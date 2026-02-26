@@ -116,25 +116,18 @@ export default function GalleryPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-32 overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 40% 60%, rgba(244,181,158,0.12) 0%, transparent 60%), #1c1c1e",
-          }}
-        />
+      <section className="relative py-20 overflow-hidden hero-landscape">
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-block px-3 py-1 rounded-full bg-[#f4b59e]/20 text-[#f4b59e] text-xs font-semibold uppercase tracking-wider mb-6">
+          <div className="inline-block px-3 py-1 rounded-full bg-white/60 backdrop-blur border border-[#f4b59e]/50 text-[#5a4a3a] text-xs font-semibold uppercase tracking-wider mb-6">
             Gallery
           </div>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black mb-6">
-            <span className="text-white">Moments</span>
+            <span className="text-[#2d2d2d]">Moments</span>
             <br />
             <span className="gradient-text">Worth Keeping</span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
-            Three years of memories, connections, and unforgettable experiences. This is what 404day looks like.
+          <p className="text-lg sm:text-xl text-[#5a4a3a] leading-relaxed max-w-2xl mx-auto">
+            Music, food, and the vibrant community spirit. This is what 404 Day looks like.
           </p>
         </div>
       </section>
@@ -146,7 +139,7 @@ export default function GalleryPage() {
           {categories.map((cat) => (
             <div
               key={cat}
-              className="px-4 py-2 rounded-full text-sm font-medium border border-[#fac355]/30 text-[#fac355]/70 cursor-default"
+              className="px-4 py-2 rounded-full text-sm font-medium border border-[#e87851]/40 text-[#e87851] cursor-default"
             >
               {cat !== "All" && <span className="mr-1">{emojiMap[cat]}</span>}
               {cat}
@@ -174,14 +167,14 @@ export default function GalleryPage() {
                 >
                   {item.category} · {item.year}
                 </div>
-                <div className="text-white font-semibold text-center text-sm">{item.title}</div>
+                <div className="text-[#2d2d2d] font-semibold text-center text-sm">{item.title}</div>
 
                 {/* Hover overlay */}
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-2xl"
                   style={{ background: `${item.color}20` }}
                 >
-                  <div className="text-white text-xs font-semibold bg-black/40 px-3 py-1.5 rounded-full">
+                  <div className="text-[#2d2d2d] text-xs font-semibold bg-white/90 px-3 py-1.5 rounded-full">
                     View Photo
                   </div>
                 </div>
@@ -190,17 +183,17 @@ export default function GalleryPage() {
           ))}
         </div>
 
-        <p className="text-center text-gray-500 text-sm mt-12">
+        <p className="text-center text-[#5a5a5a] text-sm mt-12">
           Showing highlights from 2023–2025. Full photo galleries available after each event.
         </p>
       </section>
 
       {/* Year sections */}
-      <section className="py-12 bg-[#111113]">
+      <section className="py-12 bg-[#e8f0e4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="section-title">By the Numbers</h2>
-            <p className="section-subtitle mx-auto">Three years of 404day captured in photos and memories.</p>
+            <p className="section-subtitle mx-auto">Years of 404 Day captured in photos and memories.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
@@ -235,16 +228,16 @@ export default function GalleryPage() {
                 </div>
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400 text-sm">Attendees</span>
-                    <span className="text-white font-bold">{yr.attendees}</span>
+                    <span className="text-[#5a5a5a] text-sm">Attendees</span>
+                    <span className="text-[#2d2d2d] font-bold">{yr.attendees}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400 text-sm">Photos Taken</span>
-                    <span className="text-white font-bold">{yr.photos}</span>
+                    <span className="text-[#5a5a5a] text-sm">Photos Taken</span>
+                    <span className="text-[#2d2d2d] font-bold">{yr.photos}</span>
                   </div>
-                  <div className="pt-3 border-t border-[#3c3c3e]">
-                    <p className="text-xs text-gray-500">Highlight</p>
-                    <p className="text-sm text-[#f4b59e] mt-1">{yr.highlight}</p>
+                  <div className="pt-3 border-t border-[#f4b59e]/40">
+                    <p className="text-xs text-[#5a5a5a]">Highlight</p>
+                    <p className="text-sm text-[#e87851] mt-1">{yr.highlight}</p>
                   </div>
                 </div>
               </div>
@@ -255,20 +248,14 @@ export default function GalleryPage() {
 
       {/* Submit Photos CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 text-center">
-        <div
-          className="max-w-3xl mx-auto rounded-3xl p-12"
-          style={{
-            background: "linear-gradient(135deg, rgba(244,181,158,0.12) 0%, rgba(232,120,81,0.08) 100%)",
-            border: "1px solid rgba(244,181,158,0.2)",
-          }}
-        >
+        <div className="max-w-3xl mx-auto rounded-3xl p-12 bg-white/80 border border-[#f4b59e]/50">
           <div className="text-4xl mb-4">📸</div>
-          <h2 className="text-3xl font-black text-white mb-4">Were You There?</h2>
-          <p className="text-gray-400 mb-8">
-            We&apos;d love to feature your photos from past 404day events. Submit your best shots and you might
+          <h2 className="text-3xl font-black text-[#2d2d2d] mb-4">Were You There?</h2>
+          <p className="text-[#5a5a5a] mb-8">
+            We&apos;d love to feature your photos from past 404Day events. Submit your best shots and you might
             end up in the official gallery!
           </p>
-          <a href="mailto:hello@404day.com?subject=Gallery Submission" className="btn-primary">
+          <a href="mailto:info@404day.com?subject=Gallery Submission" className="btn-primary">
             Submit Your Photos
           </a>
         </div>

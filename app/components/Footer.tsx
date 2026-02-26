@@ -3,34 +3,35 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#111113] border-t border-[#fac355]/20 mt-24">
+    <footer className="bg-[#e8f0e4] border-t border-[#9ec367]/40 mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-4">
-              <Image src="/logo.svg" alt="404day Festival" width={48} height={48} className="rounded-full" />
-              <span className="text-2xl font-black text-white">
+              <Image src="/404day-logo-black.png" alt="404day Festival" width={48} height={48} className="object-contain" />
+              <span className="text-2xl font-black text-[#2d2d2d]">
                 <span className="gradient-text">404</span>day
               </span>
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Where creativity meets technology. An annual festival celebrating the culture of the digital age.
+            <p className="text-[#5a5a5a] text-sm leading-relaxed">
+              An annual celebration of Atlanta culture. Music, food, and community spirit in Piedmont Park — free every April 4th.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-[#fac355] font-semibold mb-4 text-sm uppercase tracking-wider">Navigate</h4>
+            <h4 className="text-[#e87851] font-semibold mb-4 text-sm uppercase tracking-wider">Navigate</h4>
             <ul className="space-y-2">
               {[
                 { href: "/", label: "Home" },
                 { href: "/about", label: "About Us" },
                 { href: "/events", label: "Events" },
+                { href: "/tickets", label: "Tickets" },
                 { href: "/gallery", label: "Gallery" },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-gray-400 hover:text-[#f4b59e] text-sm transition-colors">
+                  <Link href={link.href} className="text-[#5a5a5a] hover:text-[#e87851] text-sm transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -40,17 +41,23 @@ export default function Footer() {
 
           {/* More Links */}
           <div>
-            <h4 className="text-[#fac355] font-semibold mb-4 text-sm uppercase tracking-wider">Get Involved</h4>
+            <h4 className="text-[#e87851] font-semibold mb-4 text-sm uppercase tracking-wider">Get Involved</h4>
             <ul className="space-y-2">
               {[
-                { href: "/sponsorship", label: "Sponsorship" },
-                { href: "/contact", label: "Contact Us" },
-                { href: "/events", label: "Buy Tickets" },
+                { href: "/sponsorship", label: "Sponsorship", external: false },
+                { href: "/contact", label: "Contact Us", external: false },
+                { href: "/tickets", label: "RSVP Free", external: false },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-gray-400 hover:text-[#f4b59e] text-sm transition-colors">
-                    {link.label}
-                  </Link>
+                  {link.external ? (
+                    <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-[#5a5a5a] hover:text-[#e87851] text-sm transition-colors">
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link href={link.href} className="text-[#5a5a5a] hover:text-[#e87851] text-sm transition-colors">
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -58,20 +65,20 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-[#fac355] font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
+            <h4 className="text-[#e87851] font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
+            <ul className="space-y-2 text-sm text-[#5a5a5a]">
               <li>
-                <a href="mailto:hello@404day.com" className="hover:text-[#f4b59e] transition-colors">
-                  hello@404day.com
+                <a href="mailto:info@404day.com" className="hover:text-[#e87851] transition-colors">
+                  info@404day.com
                 </a>
               </li>
-              <li>Atlanta, Georgia</li>
+              <li>Text: 404.922.7545</li>
             </ul>
             {/* Social Links */}
             <div className="flex gap-3 mt-5">
               {[
                 {
-                  label: "Twitter",
+                  label: "X (Twitter)",
                   href: "#",
                   icon: (
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -100,7 +107,7 @@ export default function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-9 h-9 flex items-center justify-center rounded-lg bg-[#2c2c2e] text-gray-400 hover:text-[#fac355] hover:bg-[#fac355]/10 transition-all"
+                  className="w-9 h-9 flex items-center justify-center rounded-lg bg-white/80 text-[#5a5a5a] hover:text-[#e87851] hover:bg-[#f4b59e]/20 transition-all border border-[#9ec367]/30"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     {social.icon}
@@ -111,12 +118,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-[#fac355]/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        <div className="mt-12 pt-8 border-t border-[#9ec367]/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#5a5a5a]">
           <p>© {new Date().getFullYear()} 404day Festival. All rights reserved.</p>
           <p>
             Built with{" "}
             <span className="text-[#e87851]">♥</span>
-            {" "}in Atlanta, GA
+            {" "}by{" "}
+            <a href="https://ticketwin.io" target="_blank" rel="noopener noreferrer" className="hover:text-[#e87851] transition-colors">
+              Ticketwin
+            </a>
           </p>
         </div>
       </div>

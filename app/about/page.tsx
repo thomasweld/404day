@@ -1,52 +1,32 @@
 import Link from "next/link";
 
 const team = [
-  {
-    name: "Jordan Rivers",
-    role: "Co-Founder & Creative Director",
-    bio: "A multi-disciplinary artist and technologist who has spent 15 years at the intersection of code and culture.",
-    color: "#e87851",
-  },
-  {
-    name: "Maya Chen",
-    role: "Co-Founder & Tech Lead",
-    bio: "Former Google engineer turned festival builder. Believes great technology should be invisible and experiences should be unforgettable.",
-    color: "#fac355",
-  },
-  {
-    name: "DeShawn Williams",
-    role: "Head of Music Programming",
-    bio: "Atlanta native and Grammy-nominated producer with a passion for amplifying emerging artists through technology.",
-    color: "#9ec367",
-  },
-  {
-    name: "Sofia Martinez",
-    role: "Head of Partnerships",
-    bio: "Brand strategist and community builder who has helped grow 404day from a 500-person gathering to a 10,000+ event.",
-    color: "#f4b59e",
-  },
+  { name: "Ricky Raw", role: "Co-Founder", bio: "Bringing Atlanta culture to the park year after year.", color: "#e87851" },
+  { name: "BabeyDrew", role: "Co-Founder", bio: "Creative force behind 404 Day's vibrant community spirit.", color: "#fac355" },
+  { name: "Vitillaz", role: "Co-Founder", bio: "Keeping the music and vibes flowing every April 4th.", color: "#9ec367" },
+  { name: "Katy", role: "Co-Founder", bio: "Helping 404 Day remain a highlight of Atlanta's cultural calendar.", color: "#f4b59e" },
 ];
 
 const values = [
   {
-    icon: "🔓",
-    title: "Radical Openness",
-    description: "We believe the best ideas come from unexpected places. Everyone belongs at 404day.",
+    icon: "🎵",
+    title: "Music & Culture",
+    description: "We celebrate Atlanta's music, food, and the vibrant community spirit that makes our city special.",
   },
   {
-    icon: "⚡",
-    title: "Build Fast, Break Things (Nicely)",
-    description: "We celebrate experimentation, iteration, and the courage to ship something imperfect.",
+    icon: "🆓",
+    title: "Free for Everyone",
+    description: "Thanks to our sponsors, 404 Day stays free in the park so everyone can join the celebration.",
   },
   {
     icon: "🌱",
     title: "Community First",
-    description: "We exist to serve the Atlanta tech and creative community and grow it together.",
+    description: "We exist to bring our city together — neighbors, artists, vendors, and friends.",
   },
   {
-    icon: "🎯",
-    title: "Intentional Impact",
-    description: "Every decision is made with our attendees, artists, and speakers in mind.",
+    icon: "🍑",
+    title: "Peach State Pride",
+    description: "A highlight of our city's cultural calendar. We're grateful for the amazing community that shows up.",
   },
 ];
 
@@ -54,26 +34,18 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-32 overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 70% 30%, rgba(250,195,85,0.12) 0%, transparent 60%), #1c1c1e",
-          }}
-        />
+      <section className="relative py-20 overflow-hidden hero-landscape">
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-block px-3 py-1 rounded-full bg-[#9ec367]/20 text-[#9ec367] text-xs font-semibold uppercase tracking-wider mb-6">
+          <div className="inline-block px-3 py-1 rounded-full bg-white/60 backdrop-blur border border-[#9ec367]/50 text-[#5a4a3a] text-xs font-semibold uppercase tracking-wider mb-6">
             About Us
           </div>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black mb-6">
             <span className="gradient-text">We Are</span>
             <br />
-            <span className="text-white">404day</span>
+            <span className="text-[#2d2d2d]">404Day</span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
-            A festival born from a simple belief: the best things happen when creative people share the same space —
-            physical or digital.
+          <p className="text-lg sm:text-xl text-[#5a4a3a] leading-relaxed max-w-2xl mx-auto">
+            A celebration of Atlanta culture — our music, our food, and the community spirit that makes our city special.
           </p>
         </div>
       </section>
@@ -82,25 +54,24 @@ export default function AboutPage() {
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <h2 className="section-title">Our Origin Story</h2>
-            <div className="space-y-4 text-gray-400 leading-relaxed">
+            <h2 className="section-title">Our Story</h2>
+            <div className="space-y-4 text-[#5a5a5a] leading-relaxed">
               <p>
-                In 2019, a small group of Atlanta developers and musicians threw a one-day event in a rented
-                warehouse in Cabbagetown. They called it 404day — a nod to Atlanta&apos;s area code and the
-                internet&apos;s most famous error message.
+                404 Day is a celebration of Atlanta culture — a nod to our city&apos;s 404 area code and a day to
+                come together. Every April 4th, we gather in Piedmont Park for music, food, and the vibrant community
+                spirit that makes our city special.
               </p>
               <p>
-                The idea was simple: what if the people who built the digital world also got to play in it together?
-                What if coders could dance next to the musicians who inspired them? What if a gallery could hang
-                between a hackathon and a DJ set?
+                From the music to the food to the energy in the park, 404 Day has become a highlight of our city&apos;s
+                cultural calendar. We&apos;re grateful for the amazing community that shows up year after year.
               </p>
               <p>
-                500 people showed up. The next year, 2,000. By 2023, they had to move to Centennial Olympic Park.
-                Today, 404day is one of the Southeast&apos;s premier tech and culture festivals, drawing 10,000+
-                attendees, 50+ speakers, and artists from around the globe.
+                A special thank you to all of our sponsors — especially our headlining sponsor, Patron — for their
+                generous support in keeping this event in the park free each year. Without them, 404 Day would not
+                be possible.
               </p>
-              <p className="text-[#f4b59e]">
-                We didn&apos;t find the page we were looking for. So we built it.
+              <p className="text-[#e87851] font-medium">
+                We can&apos;t wait to party with you all again.
               </p>
             </div>
           </div>
@@ -118,7 +89,7 @@ export default function AboutPage() {
               >
                 <div className="text-[#fac355] text-xs font-bold uppercase tracking-widest mb-2">{item.year}</div>
                 <div className="text-4xl font-black gradient-text">{item.stat}</div>
-                <div className="text-gray-400 text-sm mt-1">{item.label}</div>
+                <div className="text-[#5a5a5a] text-sm mt-1">{item.label}</div>
               </div>
             ))}
           </div>
@@ -126,7 +97,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-[#111113]">
+      <section className="py-20 bg-[#e8f0e4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="section-title">What We Stand For</h2>
@@ -136,8 +107,8 @@ export default function AboutPage() {
             {values.map((value) => (
               <div key={value.title} className="card">
                 <div className="text-3xl mb-4">{value.icon}</div>
-                <h3 className="text-white font-bold mb-2">{value.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{value.description}</p>
+                <h3 className="text-[#2d2d2d] font-bold mb-2">{value.title}</h3>
+                <p className="text-[#5a5a5a] text-sm leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>
@@ -160,11 +131,11 @@ export default function AboutPage() {
               >
                 {member.name.charAt(0)}
               </div>
-              <h3 className="text-white font-bold">{member.name}</h3>
+              <h3 className="text-[#2d2d2d] font-bold">{member.name}</h3>
               <p className="text-xs font-semibold mb-3" style={{ color: member.color }}>
                 {member.role}
               </p>
-              <p className="text-gray-400 text-sm leading-relaxed">{member.bio}</p>
+              <p className="text-[#5a5a5a] text-sm leading-relaxed">{member.bio}</p>
             </div>
           ))}
         </div>
@@ -172,20 +143,14 @@ export default function AboutPage() {
 
       {/* Mission CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div
-          className="max-w-3xl mx-auto rounded-3xl p-12 text-center"
-          style={{
-            background: "linear-gradient(135deg, rgba(232,120,81,0.15) 0%, rgba(250,195,85,0.08) 100%)",
-            border: "1px solid rgba(250,195,85,0.2)",
-          }}
-        >
-          <h2 className="text-3xl font-black text-white mb-4">Join the Community</h2>
-          <p className="text-gray-400 mb-8">
-            Whether you&apos;re an attendee, artist, speaker, or sponsor — there&apos;s a place for you at 404day.
+        <div className="max-w-3xl mx-auto rounded-3xl p-12 text-center bg-white/80 border border-[#f4b59e]/50">
+          <h2 className="text-3xl font-black text-[#2d2d2d] mb-4">Join Us April 4th</h2>
+          <p className="text-[#5a5a5a] mb-8">
+            Whether you&apos;re coming to enjoy the music and food, or you&apos;re a vendor, performer, or sponsor — there&apos;s a place for you at 404 Day.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/events" className="btn-primary text-center">
-              Get Tickets
+            <Link href="/tickets" className="btn-primary text-center">
+              RSVP FREE
             </Link>
             <Link href="/contact" className="btn-secondary text-center">
               Get in Touch

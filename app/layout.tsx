@@ -4,20 +4,20 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "404day Festival — Where Creativity Meets Technology",
+  title: "404 Day — Celebrating Atlanta Culture",
   description:
-    "404day is an annual festival celebrating the culture of the digital age. Music, art, tech talks, and more in Atlanta, Georgia.",
-  keywords: ["404day", "festival", "Atlanta", "technology", "music", "art", "Georgia"],
+    "404 Day is an annual celebration of Atlanta culture. Music, food, and community spirit in Piedmont Park — free to attend every April 4th.",
+  keywords: ["404day", "404 day", "festival", "Atlanta", "Piedmont Park", "music", "Georgia", "Atlanta culture"],
   icons: {
-    icon: "/logo.svg",
-    apple: "/logo.svg",
+    icon: "/404day-logo-black.png",
+    apple: "/404day-logo-white.png",
   },
   openGraph: {
-    title: "404day Festival",
-    description: "Where creativity meets technology. Annual festival in Atlanta, GA.",
+    title: "404 Day — Celebrating Atlanta Culture",
+    description: "Music, food, and community in Piedmont Park. Free to attend every April 4th.",
     type: "website",
     url: "https://404day.com",
-    images: [{ url: "/logo.svg", width: 400, height: 400, alt: "404day Festival Logo" }],
+    images: [{ url: "/404day-logo-white.png", width: 400, height: 400, alt: "404day Festival Logo" }],
   },
 };
 

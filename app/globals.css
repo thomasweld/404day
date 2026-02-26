@@ -6,8 +6,8 @@
   --color-peach: #f3a65f;
   --color-peach-coral: #e87851;
   --color-peach-green: #9ec367;
-  --color-dark: #1c1c1e;
-  --color-dark-secondary: #2c2c2e;
+  --color-sky: #b8d8e8;
+  --color-field: #a8c98a;
   --color-cream: #fdf6ee;
 
   --font-sans: "Inter", system-ui, sans-serif;
@@ -22,76 +22,174 @@ html {
 }
 
 body {
-  background-color: #1c1c1e;
-  color: #f5f5f5;
+  background-color: #fdf6ee;
+  color: #2d2d2d;
   font-family: "Inter", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
+/* Primary CTA — Peach Coral */
 .btn-primary {
-  background-color: #e87851;
+  background: linear-gradient(135deg, #e87851 0%, #f3a65f 100%);
   color: #ffffff;
   padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   font-weight: 600;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
   display: inline-block;
   text-decoration: none;
+  box-shadow: 0 4px 14px rgba(232, 120, 81, 0.35);
 }
 
 .btn-primary:hover {
-  background-color: #f3a65f;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(232, 120, 81, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(232, 120, 81, 0.45);
+  filter: brightness(1.05);
 }
 
+/* Secondary — Peach Yellow accent */
 .btn-secondary {
-  border: 2px solid #fac355;
-  color: #fac355;
+  border: 2px solid #e87851;
+  color: #e87851;
   padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   font-weight: 600;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
   display: inline-block;
   text-decoration: none;
 }
 
 .btn-secondary:hover {
-  background-color: #fac355;
-  color: #1c1c1e;
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #fac355 0%, #f3a65f 100%);
+  color: #ffffff;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(250, 195, 85, 0.35);
 }
 
+/* Section typography */
 .section-title {
   font-size: 2.25rem;
-  font-weight: 700;
-  color: #fac355;
+  font-weight: 800;
+  background: linear-gradient(135deg, #e87851 0%, #f3a65f 50%, #fac355 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1rem;
 }
 
 .section-subtitle {
   font-size: 1.125rem;
-  color: #f4b59e;
+  color: #5a5a5a;
   max-width: 640px;
 }
 
+/* Cards — light, warm, Georgia-inspired */
 .card {
-  background-color: #2c2c2e;
+  background: #ffffff;
   border-radius: 1rem;
   padding: 2rem;
-  border: 1px solid rgba(250, 195, 85, 0.15);
-  transition: all 0.2s ease;
+  border: 1px solid rgba(244, 181, 158, 0.4);
+  box-shadow: 0 2px 12px rgba(232, 120, 81, 0.08);
+  transition: all 0.25s ease;
 }
 
 .card:hover {
-  border-color: rgba(250, 195, 85, 0.4);
+  border-color: rgba(232, 120, 81, 0.6);
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 32px rgba(232, 120, 81, 0.15);
 }
 
+/* Gradient text — warm peach spectrum */
 .gradient-text {
-  background: linear-gradient(135deg, #fac355, #e87851);
+  background: linear-gradient(135deg, #e87851 0%, #f3a65f 35%, #fac355 70%, #9ec367 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Improve readability of gradient text on hero backgrounds */
+.hero-landscape .gradient-text,
+.hero-peaches .gradient-text {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+}
+
+/* Hero gradient — blue, red, peach, yellow, green */
+.hero-landscape {
+  background: linear-gradient(
+    180deg,
+    #5a9fd4 0%,
+    #7eb8da 35%,
+    #e87851 55%,
+    #f3a65f 70%,
+    #fac355 85%,
+    #9ec367 100%
+  );
+}
+
+/* Hero with peaches image + transparent gradient overlays */
+.hero-peaches {
+  background-image: url("/404day-fest-peaches-hero.png?v=2");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Dark overlay so white logo + text read clearly */
+.hero-peaches::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+}
+
+.hero-peaches::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 100% 80% at 50% 50%,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  pointer-events: none;
+}
+
+/* Hero CTA buttons — blue and green */
+.hero-peaches .btn-hero-primary {
+  background: #3b82f6;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  display: inline-block;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+}
+
+.hero-peaches .btn-hero-primary:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.5);
+}
+
+.hero-peaches .btn-hero-secondary {
+  background: #22c55e;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
+}
+
+.hero-peaches .btn-hero-secondary:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.45);
 }
