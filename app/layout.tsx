@@ -8,11 +8,16 @@ export const metadata: Metadata = {
   description:
     "404day is an annual festival celebrating the culture of the digital age. Music, art, tech talks, and more in Atlanta, Georgia.",
   keywords: ["404day", "festival", "Atlanta", "technology", "music", "art", "Georgia"],
+  icons: {
+    icon: "/logo.svg",
+    apple: "/logo.svg",
+  },
   openGraph: {
     title: "404day Festival",
     description: "Where creativity meets technology. Annual festival in Atlanta, GA.",
     type: "website",
     url: "https://404day.com",
+    images: [{ url: "/logo.svg", width: 400, height: 400, alt: "404day Festival Logo" }],
   },
 };
 

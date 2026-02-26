@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -22,11 +23,17 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <span className="text-2xl font-black gradient-text">404</span>
-            <span className="text-2xl font-black text-white">day</span>
-            <span className="text-xs text-[#9ec367] font-semibold tracking-widest uppercase ml-1 opacity-80">
-              Festival
+          <Link href="/" className="flex items-center gap-3 group" aria-label="404day Festival — Home">
+            <Image
+              src="/logo.svg"
+              alt="404day Festival"
+              width={40}
+              height={40}
+              className="rounded-full"
+              priority
+            />
+            <span className="text-lg font-black text-white hidden sm:block">
+              <span className="gradient-text">404</span>day
             </span>
           </Link>
 

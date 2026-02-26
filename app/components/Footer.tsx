@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,10 +8,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex items-baseline gap-1 mb-4">
-              <span className="text-3xl font-black gradient-text">404</span>
-              <span className="text-3xl font-black text-white">day</span>
-            </div>
+            <Link href="/" className="flex items-center gap-3 mb-4">
+              <Image src="/logo.svg" alt="404day Festival" width={48} height={48} className="rounded-full" />
+              <span className="text-2xl font-black text-white">
+                <span className="gradient-text">404</span>day
+              </span>
+            </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
               Where creativity meets technology. An annual festival celebrating the culture of the digital age.
             </p>

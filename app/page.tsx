@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const upcomingEvents = [
   {
@@ -74,6 +75,17 @@ export default function HomePage() {
           }}
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-32">
+          {/* Logo mark */}
+          <div className="flex justify-center mb-8">
+            <Image
+              src="/logo.svg"
+              alt="404day Festival"
+              width={140}
+              height={140}
+              className="drop-shadow-2xl"
+              priority
+            />
+          </div>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e87851]/20 border border-[#e87851]/40 text-[#f3a65f] text-sm font-medium mb-8">
             <span className="w-2 h-2 rounded-full bg-[#9ec367] animate-pulse" />
             April 4th, 2026 · Atlanta, Georgia
