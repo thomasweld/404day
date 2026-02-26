@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-peach-yellow: #fac355;
+  --color-peach-light: #f4b59e;
+  --color-peach: #f3a65f;
+  --color-peach-coral: #e87851;
+  --color-peach-green: #9ec367;
+  --color-dark: #1c1c1e;
+  --color-dark-secondary: #2c2c2e;
+  --color-cream: #fdf6ee;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #1c1c1e;
+  color: #f5f5f5;
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn-primary {
+  background-color: #e87851;
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #f3a65f;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(232, 120, 81, 0.35);
+}
+
+.btn-secondary {
+  border: 2px solid #fac355;
+  color: #fac355;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: #fac355;
+  color: #1c1c1e;
+  transform: translateY(-1px);
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #fac355;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: #f4b59e;
+  max-width: 640px;
+}
+
+.card {
+  background-color: #2c2c2e;
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(250, 195, 85, 0.15);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: rgba(250, 195, 85, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #fac355, #e87851);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
