@@ -7,7 +7,7 @@ const upcomingEvents = [
     id: 1,
     date: "APR 4",
     year: "2026",
-    title: "404 Day 2026",
+    title: "404Day 2026",
     location: "Piedmont Park, Atlanta GA",
     tags: ["Music", "Food", "Community"],
     color: "#e87851",
@@ -95,7 +95,7 @@ export default function HomePage() {
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="section-title">What Awaits You</h2>
-          <p className="section-subtitle mx-auto">Music, food, and the vibrant community spirit that makes 404 Day a highlight of Atlanta&apos;s cultural calendar.</p>
+          <p className="section-subtitle mx-auto">Music, food, and the vibrant community spirit that makes 404Day a highlight of Atlanta&apos;s cultural calendar.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature) => (
