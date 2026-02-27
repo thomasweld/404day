@@ -47,7 +47,7 @@ export default function EventsPage() {
           {schedule.map((item) => (
             <div
               key={item.title}
-              className="card overflow-hidden p-0"
+              className="card overflow-hidden !p-0"
             >
               <div className="aspect-[4/3] relative">
                 <Image
