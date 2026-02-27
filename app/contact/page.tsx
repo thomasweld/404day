@@ -27,17 +27,24 @@ export default function ContactPage() {
       color: "#fac355",
     },
     {
+      icon: "🤝",
+      title: "Sponsorship",
+      value: "sponsors@404day.com",
+      href: "mailto:sponsors@404day.com",
+      color: "#e87851",
+    },
+    {
       icon: "🛒",
       title: "Vendors",
-      value: "404DayVendors@gmail.com",
-      href: "mailto:404DayVendors@gmail.com",
+      value: "vendors@404day.com",
+      href: "mailto:vendors@404day.com",
       color: "#e87851",
     },
     {
       icon: "🎤",
       title: "Performers & Artists",
-      value: "404DayArtists@gmail.com",
-      href: "mailto:404DayArtists@gmail.com",
+      value: "artists@404day.com",
+      href: "mailto:artists@404day.com",
       color: "#9ec367",
     },
     {
@@ -186,24 +193,24 @@ export default function ContactPage() {
             <div className="space-y-4">
               {[
                 {
-                  q: "When and where is 404 Day 2026?",
+                  q: "When and where is 404Day 2026?",
                   a: "April 4th, 2026 at Piedmont Park in Atlanta, Georgia.",
                 },
                 {
                   q: "Is it really free?",
-                  a: "Yes! 404 Day is free to attend thanks to our sponsors, especially our headlining sponsor Patron, who help keep this event in the park free every year.",
+                  a: "Yes! 404Day is free to attend thanks to our sponsors, especially our headlining sponsor Patron, who help keep this event in the park free every year.",
                 },
                 {
                   q: "How do I become a vendor?",
-                  a: "Email 404DayVendors@gmail.com with details about your business and what you'd like to offer.",
+                  a: "Email vendors@404day.com with details about your business and what you'd like to offer.",
                 },
                 {
-                  q: "How do I perform at 404 Day?",
-                  a: "Email 404DayArtists@gmail.com with your act and availability. Our team reviews all submissions.",
+                  q: "How do I perform at 404Day?",
+                  a: "Email artists@404day.com with your act and availability. Our team reviews all submissions.",
                 },
                 {
                   q: "Who do I contact for sponsorship or media?",
-                  a: "Email info@404day.com for sponsorship opportunities and media inquiries.",
+                  a: "Email sponsors@404day.com for sponsorship opportunities and media inquiries.",
                 },
               ].map((faq) => (
                 <div

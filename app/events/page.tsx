@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
+import { basePath } from "../lib/constants";
 
 const schedule = [
-  { time: "All Day", title: "Music & Performances", stage: "Main Stage", type: "music" },
-  { time: "All Day", title: "Food & Vendors", stage: "Vendor Village", type: "food" },
-  { time: "All Day", title: "Community Vibes", stage: "Piedmont Park", type: "general" },
+  { time: "All Day", title: "Music & Performances", stage: "Main Stage", type: "music", image: "404day-music-festival-dj-booth.jpg" },
+  { time: "All Day", title: "Food & Vendors", stage: "Vendor Village", type: "food", image: "404day-music-festival-vitamin-water-vendor.jpg" },
+  { time: "All Day", title: "Community Vibes", stage: "Piedmont Park", type: "general", image: "404day-music-festival-crowd-dance-party-1.JPG" },
 ];
 
 const typeColors: Record<string, string> = {
@@ -22,7 +24,7 @@ export default function EventsPage() {
             Free to Attend
           </div>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black mb-6">
-            <span className="text-[#2d2d2d]">404 Day 2026</span>
+            <span className="text-[#2d2d2d]">404Day 2026</span>
             <br />
             <span className="gradient-text">Piedmont Park</span>
           </h1>
@@ -45,17 +47,27 @@ export default function EventsPage() {
           {schedule.map((item) => (
             <div
               key={item.title}
-              className="card text-center"
+              className="card overflow-hidden p-0"
             >
-              <div className="text-[#fac355] font-mono text-sm font-bold mb-2">{item.time}</div>
-              <h3 className="text-xl font-bold text-[#2d2d2d] mb-2">{item.title}</h3>
-              <p className="text-[#5a5a5a] text-sm">{item.stage}</p>
-              <span
-                className="inline-block mt-3 px-3 py-1 rounded-full text-xs font-semibold"
-                style={{ color: typeColors[item.type], background: `${typeColors[item.type]}20` }}
-              >
-                {item.type === "general" ? "Community" : item.type.charAt(0).toUpperCase() + item.type.slice(1)}
-              </span>
+              <div className="aspect-[4/3] relative">
+                <Image
+                  src={`${basePath}/gallery/${item.image}`}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5 text-center">
+                <div className="text-[#fac355] font-mono text-sm font-bold mb-2">{item.time}</div>
+                <h3 className="text-xl font-bold text-[#2d2d2d] mb-2">{item.title}</h3>
+                <p className="text-[#5a5a5a] text-sm">{item.stage}</p>
+                <span
+                  className="inline-block mt-3 px-3 py-1 rounded-full text-xs font-semibold"
+                  style={{ color: typeColors[item.type], background: `${typeColors[item.type]}20` }}
+                >
+                  {item.type === "general" ? "Community" : item.type.charAt(0).toUpperCase() + item.type.slice(1)}
+                </span>
+              </div>
             </div>
           ))}
         </div>
@@ -64,6 +76,15 @@ export default function EventsPage() {
       {/* Venue Info */}
       <section className="py-20 bg-[#e8f0e4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl overflow-hidden mb-12 aspect-[21/9] max-h-64">
+            <Image
+              src={`${basePath}/gallery/404day-music-festival-crowd-wide-piedmont-park-atlanta-ga.JPG`}
+              alt="404Day in Piedmont Park"
+              width={1200}
+              height={400}
+              className="w-full h-full object-cover"
+            />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
@@ -75,7 +96,7 @@ export default function EventsPage() {
               {
                 icon: "🆓",
                 title: "Admission",
-                content: "Free to attend\nThanks to our sponsors for keeping 404 Day in the park free every year",
+                content: "Free to attend\nThanks to our sponsors for keeping 404Day in the park free every year",
                 color: "#9ec367",
               },
             ].map((info) => (

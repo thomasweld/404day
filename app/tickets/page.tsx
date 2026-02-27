@@ -16,7 +16,7 @@ export default function TicketsPage() {
             Join Us
           </h1>
           <p className="text-lg sm:text-xl text-white/90 mt-4 max-w-2xl mx-auto">
-            RSVP free for 404 Day 2026 in Piedmont Park
+            RSVP free for 404Day 2026 in Piedmont Park
           </p>
         </div>
       </section>
@@ -29,14 +29,14 @@ export default function TicketsPage() {
             <div className="relative h-48 bg-gradient-to-br from-[#e87851] to-[#fac355]">
               <Image
                 src={`${basePath}/404day-fest-peaches-hero.png?v=3`}
-                alt="404 Day 2026"
+                alt="404Day 2026"
                 fill
                 className="object-cover opacity-80"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4">
                 <h2 className="text-2xl font-bold text-white drop-shadow">
-                  404 Day 2026 in Piedmont Park
+                  404Day 2026 in Piedmont Park
                 </h2>
                 <p className="text-white/90 text-sm mt-1">April 4, 2026 · Atlanta, GA</p>
               </div>

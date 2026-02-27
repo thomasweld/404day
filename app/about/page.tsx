@@ -1,10 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
+import { basePath } from "../lib/constants";
 
 const team = [
   { name: "Ricky Raw", role: "Co-Founder", bio: "Bringing Atlanta culture to the park year after year.", color: "#e87851" },
-  { name: "BabeyDrew", role: "Co-Founder", bio: "Creative force behind 404 Day's vibrant community spirit.", color: "#fac355" },
+  { name: "BabeyDrew", role: "Co-Founder", bio: "Creative force behind 404Day's vibrant community spirit.", color: "#fac355" },
   { name: "Vitillaz", role: "Co-Founder", bio: "Keeping the music and vibes flowing every April 4th.", color: "#9ec367" },
-  { name: "Katy", role: "Co-Founder", bio: "Helping 404 Day remain a highlight of Atlanta's cultural calendar.", color: "#f4b59e" },
+  { name: "Katy", role: "Co-Founder", bio: "Helping 404Day remain a highlight of Atlanta's cultural calendar.", color: "#f4b59e" },
 ];
 
 const values = [
@@ -16,7 +18,7 @@ const values = [
   {
     icon: "🆓",
     title: "Free for Everyone",
-    description: "Thanks to our sponsors, 404 Day stays free in the park so everyone can join the celebration.",
+    description: "Thanks to our sponsors, 404Day stays free in the park so everyone can join the celebration.",
   },
   {
     icon: "🌱",
@@ -57,17 +59,17 @@ export default function AboutPage() {
             <h2 className="section-title">Our Story</h2>
             <div className="space-y-4 text-[#5a5a5a] leading-relaxed">
               <p>
-                404 Day is a celebration of Atlanta culture — a nod to our city&apos;s 404 area code and a day to
+                404Day is a celebration of Atlanta culture — a nod to our city&apos;s 404 area code and a day to
                 come together. Every April 4th, we gather in Piedmont Park for music, food, and the vibrant community
                 spirit that makes our city special.
               </p>
               <p>
-                From the music to the food to the energy in the park, 404 Day has become a highlight of our city&apos;s
+                From the music to the food to the energy in the park, 404Day has become a highlight of our city&apos;s
                 cultural calendar. We&apos;re grateful for the amazing community that shows up year after year.
               </p>
               <p>
                 A special thank you to all of our sponsors — especially our headlining sponsor, Patron — for their
-                generous support in keeping this event in the park free each year. Without them, 404 Day would not
+                generous support in keeping this event in the park free each year. Without them, 404Day would not
                 be possible.
               </p>
               <p className="text-[#e87851] font-medium">
@@ -75,7 +77,17 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="space-y-6">
+            <div className="rounded-2xl overflow-hidden aspect-[4/5]">
+              <Image
+                src={`${basePath}/gallery/404day-music-festival-sponsors-patron.JPG`}
+                alt="Patron, our headlining sponsor"
+                width={500}
+                height={375}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
             {[
               { year: "2019", stat: "500", label: "Attendees" },
               { year: "2020", stat: "2K", label: "Attendees" },
@@ -92,6 +104,7 @@ export default function AboutPage() {
                 <div className="text-[#5a5a5a] text-sm mt-1">{item.label}</div>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </section>
@@ -146,7 +159,7 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto rounded-3xl p-12 text-center bg-white/80 border border-[#f4b59e]/50">
           <h2 className="text-3xl font-black text-[#2d2d2d] mb-4">Join Us April 4th</h2>
           <p className="text-[#5a5a5a] mb-8">
-            Whether you&apos;re coming to enjoy the music and food, or you&apos;re a vendor, performer, or sponsor — there&apos;s a place for you at 404 Day.
+            Whether you&apos;re coming to enjoy the music and food, or you&apos;re a vendor, performer, or sponsor — there&apos;s a place for you at 404Day.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/tickets" className="btn-primary text-center">

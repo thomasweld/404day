@@ -1,116 +1,25 @@
-const galleryItems = [
-  {
-    id: 1,
-    category: "Music",
-    year: "2025",
-    title: "Main Stage Headliner",
-    color: "#e87851",
-    size: "large",
-  },
-  {
-    id: 2,
-    category: "Tech",
-    year: "2025",
-    title: "Keynote Address",
-    color: "#fac355",
-    size: "small",
-  },
-  {
-    id: 3,
-    category: "Art",
-    year: "2025",
-    title: "Digital Installation",
-    color: "#9ec367",
-    size: "small",
-  },
-  {
-    id: 4,
-    category: "Community",
-    year: "2025",
-    title: "Networking Mixer",
-    color: "#f4b59e",
-    size: "medium",
-  },
-  {
-    id: 5,
-    category: "Music",
-    year: "2024",
-    title: "Night Stage",
-    color: "#f3a65f",
-    size: "medium",
-  },
-  {
-    id: 6,
-    category: "Tech",
-    year: "2024",
-    title: "Workshop Hall",
-    color: "#fac355",
-    size: "small",
-  },
-  {
-    id: 7,
-    category: "Art",
-    year: "2024",
-    title: "Creator Showcase",
-    color: "#e87851",
-    size: "small",
-  },
-  {
-    id: 8,
-    category: "Community",
-    year: "2024",
-    title: "Opening Ceremony",
-    color: "#9ec367",
-    size: "large",
-  },
-  {
-    id: 9,
-    category: "Music",
-    year: "2023",
-    title: "Sunset Set",
-    color: "#f4b59e",
-    size: "small",
-  },
-  {
-    id: 10,
-    category: "Tech",
-    year: "2023",
-    title: "Hackathon Night",
-    color: "#fac355",
-    size: "small",
-  },
-  {
-    id: 11,
-    category: "Art",
-    year: "2023",
-    title: "AR Experience",
-    color: "#9ec367",
-    size: "medium",
-  },
-  {
-    id: 12,
-    category: "Community",
-    year: "2023",
-    title: "Crowd Moments",
-    color: "#e87851",
-    size: "medium",
-  },
+import Image from "next/image";
+import { basePath } from "../lib/constants";
+
+const galleryImages = [
+  "404day-music-festival-crowd-dj-stage-backstage.JPG",
+  "404day-music-festival-atlanta-falcons.jpg",
+  "404day-music-festival-dj-booth.jpg",
+  "404day-music-festival-crowd-dj-dance-floor.jpg",
+  "404day-music-festival-sponsors-xfinity-360-3d-pictures.jpg",
+  "404day-music-festival-break-dancer-3.jpg",
+  "404day-music-festival-vendors-sponsors-bang-energy-drink.jpg",
+  "404day-music-festival-break-dancer-2.jpg",
+  "404day-music-festival-dj-atlanta-braves.jpg",
+  "404day-music-festival-crowd-tents.JPG",
+  "404day-music-festival-crowd-dance-party-1.JPG",
+  "404day-music-festival-sponsors-patron.JPG",
+  "404day-music-festival-sponsors-sprite.jpg",
+  "404day-music-festival-sponsors-xfinity.jpg",
+  "404day-music-festival-crowd-wide-piedmont-park-atlanta-ga.JPG",
+  "404day-music-festival-vitamin-water-vendor.jpg",
+  "404day-music-festival-break-dancer.jpg",
 ];
-
-const categories = ["All", "Music", "Tech", "Art", "Community"];
-
-const emojiMap: Record<string, string> = {
-  Music: "🎵",
-  Tech: "💻",
-  Art: "🎨",
-  Community: "🤝",
-};
-
-const sizeMap = {
-  small: "aspect-square",
-  medium: "aspect-[4/3]",
-  large: "aspect-[16/9]",
-};
 
 export default function GalleryPage() {
   return (
@@ -127,64 +36,32 @@ export default function GalleryPage() {
             <span className="gradient-text">Worth Keeping</span>
           </h1>
           <p className="text-lg sm:text-xl text-[#5a4a3a] leading-relaxed max-w-2xl mx-auto">
-            Music, food, and the vibrant community spirit. This is what 404 Day looks like.
+            Music, food, and the vibrant community spirit. This is what 404Day looks like.
           </p>
         </div>
       </section>
 
-      {/* Filter + Grid */}
+      {/* Gallery Grid */}
       <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Category Filters (static for SSG) */}
-        <div className="flex flex-wrap gap-2 justify-center mb-12">
-          {categories.map((cat) => (
-            <div
-              key={cat}
-              className="px-4 py-2 rounded-full text-sm font-medium border border-[#e87851]/40 text-[#e87851] cursor-default"
-            >
-              {cat !== "All" && <span className="mr-1">{emojiMap[cat]}</span>}
-              {cat}
-            </div>
-          ))}
-        </div>
-
-        {/* Gallery Grid */}
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-          {galleryItems.map((item) => (
+          {galleryImages.map((filename) => (
             <div
-              key={item.id}
-              className={`${sizeMap[item.size as keyof typeof sizeMap]} break-inside-avoid rounded-2xl overflow-hidden relative group cursor-pointer`}
-              style={{
-                background: `linear-gradient(135deg, ${item.color}25 0%, ${item.color}10 100%)`,
-                border: `1px solid ${item.color}30`,
-              }}
+              key={filename}
+              className="break-inside-avoid rounded-2xl overflow-hidden relative group"
             >
-              {/* Placeholder visual */}
-              <div className="w-full h-full min-h-48 flex flex-col items-center justify-center p-6 relative">
-                <div className="text-5xl mb-3 opacity-60">{emojiMap[item.category]}</div>
-                <div
-                  className="text-xs font-bold uppercase tracking-widest mb-2"
-                  style={{ color: item.color }}
-                >
-                  {item.category} · {item.year}
-                </div>
-                <div className="text-[#2d2d2d] font-semibold text-center text-sm">{item.title}</div>
-
-                {/* Hover overlay */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-2xl"
-                  style={{ background: `${item.color}20` }}
-                >
-                  <div className="text-[#2d2d2d] text-xs font-semibold bg-white/90 px-3 py-1.5 rounded-full">
-                    View Photo
-                  </div>
-                </div>
-              </div>
+              <Image
+                src={`${basePath}/gallery/${filename}`}
+                alt={filename.replace(/\.[^.]+$/, "").replace(/-/g, " ")}
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover"
+              />
             </div>
           ))}
         </div>
 
         <p className="text-center text-[#5a5a5a] text-sm mt-12">
-          Showing highlights from 2023–2025. Full photo galleries available after each event.
+          Moments from 404Day in Piedmont Park.
         </p>
       </section>
 
@@ -193,7 +70,7 @@ export default function GalleryPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="section-title">By the Numbers</h2>
-            <p className="section-subtitle mx-auto">Years of 404 Day captured in photos and memories.</p>
+            <p className="section-subtitle mx-auto">Years of 404Day captured in photos and memories.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
