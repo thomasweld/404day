@@ -20,6 +20,12 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  const isActive = (href: string) => {
+    const path = (pathname || "/").replace(/\/$/, "") || "/";
+    const link = (href || "/").replace(/\/$/, "") || "/";
+    return path === link;
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#f4b59e]/40 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,8 +52,8 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  pathname === link.href
-                    ? "text-[#e87851] bg-[#f4b59e]/20"
+                  isActive(link.href)
+                    ? "text-[#e87851] bg-[#f4b59e]/10"
                     : "text-[#5a5a5a] hover:text-[#e87851] hover:bg-[#f4b59e]/10"
                 }`}
               >
@@ -87,8 +93,8 @@ export default function Header() {
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
                   className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    pathname === link.href
-                      ? "text-[#e87851] bg-[#f4b59e]/20"
+                    isActive(link.href)
+                      ? "text-[#e87851] bg-[#f4b59e]/10"
                       : "text-[#5a5a5a] hover:text-[#e87851] hover:bg-[#f4b59e]/10"
                   }`}
                 >

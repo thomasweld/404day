@@ -78,8 +78,8 @@ export default function EventsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl overflow-hidden mb-12 aspect-[21/9] max-h-64">
             <Image
-              src={`${basePath}/gallery/404day-music-festival-crowd-wide-piedmont-park-atlanta-ga.JPG`}
-              alt="404Day in Piedmont Park"
+              src={`${basePath}/gallery/404day-music-festival-crowd-dj-dance-floor.jpg`}
+              alt="404Day crowd on the dance floor"
               width={1200}
               height={400}
               className="w-full h-full object-cover"
